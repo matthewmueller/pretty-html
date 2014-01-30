@@ -5,11 +5,11 @@
 
   **HTML View:**
 
-  [html view](https://i.cloudup.com/6zFvalrj3D.png)
+  ![html view](https://i.cloudup.com/6zFvalrj3D.png)
 
   **Text View:**
 
-  [text view](https://i.cloudup.com/3v6N5qYaMv.png)
+  ![text view](https://i.cloudup.com/3v6N5qYaMv.png)
 
 ## Installation
 
