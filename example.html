@@ -1,0 +1,90 @@
+<html>
+<head>
+  <title>pretty-html component</title>
+  <link rel="stylesheet" href="../build/build.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    #left, #right {
+      height: 100%;
+      width: 50%;
+      padding: 20px;
+      float: left;
+    }
+
+    #right {
+      border-left: 1px solid #ccc;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="left">
+    <h1>At, illa, ut vobis placet, partem quandam tuetur, reliquam deserit.</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <i>Si longus, levis.</i> <mark>Ut aliquid scire se gaudeant?</mark> <a href='http://loripsum.net/' target='_blank'>Quid ergo?</a> Duo Reges: constructio interrete. <b>Itaque contra est, ac dicitis;</b> Audeo dicere, inquit. </p>
+
+    <ul>
+      <li>Bonum negas esse divitias, praeposìtum esse dicis?</li>
+      <li>Ut enim consuetudo loquitur, id solum dicitur honestum, quod est populari fama gloriosum.</li>
+    </ul>
+
+
+    <pre>
+    Est enim tanti philosophi tamque nobilis
+    decreta defendere.
+
+    Videamus animi partes
+    </pre>
+
+
+    <blockquote cite='http://loripsum.net'>
+      Huic ego, si negaret quicquam interesse ad beate vivendum quali uteretur victu, concederem, laudarem etiam;
+    </blockquote>
+
+
+    <dl>
+      <dt><dfn>Erat enim Polemonis.</dfn></dt>
+      <dd>Mene ergo et Triarium dignos existimas, apud quos turpiter loquare?</dd>
+      <dt><dfn>Recte, inquit, intellegis.</dfn></dt>
+      <dd>Negabat igitur ullam esse artem, quae ipsa a se proficisceretur;</dd>
+      <dt><dfn>Nihil sane.</dfn></dt>
+      <dd>Zenonis est, inquam, hoc Stoici.</dd>
+      <dt><dfn>Magna laus.</dfn></dt>
+      <dd>Conclusum est enim contra Cyrenaicos satis acute, nihil ad Epicurum.</dd>
+    </dl>
+
+
+    <p><code>Sed plane dicit quod intellegit.</code> Respondeat totidem verbis. At enim hic etiam dolore. <i>Quamquam te quidem video minime esse deterritum.</i> Est, ut dicis, inquit; <a href='http://loripsum.net/' target='_blank'>Sedulo, inquam, faciam.</a> </p>
+
+    <p>Si quae forte-possumus. Quid de Pythagora? <code>Traditur, inquit, ab Epicuro ratio neglegendi doloris.</code> Nos vero, inquit ille; </p>
+
+    <ol>
+      <li>Qui enim voluptatem ipsam contemnunt, iis licet dicere se acupenserem maenae non anteponere.</li>
+      <li>Negat enim summo bono afferre incrementum diem.</li>
+      <li>Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit;</li>
+      <li>Ut placet, inquit, etsi enim illud erat aptius, aequum cuique concedere.</li>
+    </ol>
+  </div>
+  <div id="right">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, cum, eius illo libero natus animi assumenda necessitatibus voluptates facilis iste tenetur harum dolorem. Quis, incidunt, blanditiis debitis provident accusamus pariatur.
+  </div>
+  <script src="../build/build.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var domify = require('domify');
+    var pretty = require('pretty-html');
+    var frag = domify(left.innerHTML);
+
+    right.innerHTML = pretty(frag).html();
+    console.log(pretty(frag).text())
+  </script>
+</body>
+</html>
