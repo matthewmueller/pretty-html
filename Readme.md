@@ -17,6 +17,10 @@
 
     $ component install matthewmueller/pretty-html
 
+  Or with node:
+
+    $ npm install pretty-html
+
 ## Example
 
 ```js
