@@ -44,7 +44,12 @@
 </head>
 <body>
   <div id="left">
-    <textarea id="editor"></textarea>
+<textarea id="editor">
+<article class="post">
+  <h1>title</h1>
+  <p>paragraph</p>
+</article>
+</textarea>
   </div>
   <div id="right"></div>
   <script src="codemirror.js"></script>
@@ -54,6 +59,8 @@
     var editor = document.getElementById('editor');
     var pretty = require('pretty-html');
     var out = document.getElementById('right');
+    var dom = domify(editor.value);
+
     var cm = CodeMirror.fromTextArea(editor, {
       mode: 'htmlmixed',
       lineWrapping: true
@@ -67,6 +74,7 @@
       } catch (e) {}
     });
 
+    out.innerHTML = pretty(dom).html();
   </script>
 </body>
 </html>
