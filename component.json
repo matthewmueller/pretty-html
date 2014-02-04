@@ -1,0 +1,19 @@
+{
+  "name": "pretty-html",
+  "repo": "matthewmueller/pretty-html",
+  "description": "html logging that's easy on the eyes",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "component/domify": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "styles": [
+    "pretty.css"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}

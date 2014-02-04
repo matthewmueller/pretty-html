@@ -1,1 +1,72 @@
-My Page
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="build/build.css">
+  <link rel="stylesheet" href="codemirror.css">
+  <title>Pretty HTML</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #left, #right {
+      width: 50%;
+      float: left;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    #left {
+      background: #eee;
+    }
+
+    #right {
+      padding: 10px 15px;
+    }
+
+    .CodeMirror {
+      background: inherit;
+      padding: 10px;
+      font-size: 16px;
+      height: 100%;
+    }
+
+    .CodeMirror .cm-invalidchar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="left">
+    <textarea id="editor"></textarea>
+  </div>
+  <div id="right"></div>
+  <script src="codemirror.js"></script>
+  <script src="build/build.js"></script>
+  <script>
+    var domify = require('domify');
+    var editor = document.getElementById('editor');
+    var pretty = require('pretty-html');
+    var out = document.getElementById('right');
+    var cm = CodeMirror.fromTextArea(editor, {
+      mode: 'htmlmixed',
+      lineWrapping: true
+    });
+
+    cm.on('change', function() {
+      try {
+        var val = cm.getValue().replace(/^\s*|\s*$/g, '');
+        var dom = domify(val);
+        out.innerHTML = pretty(dom).html();
+      } catch (e) {}
+    });
+
+  </script>
+</body>
+</html>
